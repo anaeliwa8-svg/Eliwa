@@ -4,544 +4,190 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zyad Eliwa Photographer | زياد عليوة للتصوير</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#131110;
-    --bg-soft:#1a1613;
-    --surface:#211b16;
-    --surface-raised:#2a221b;
-    --gold:#c9a15a;
-    --gold-bright:#eccf8f;
-    --ivory:#f4ede0;
-    --muted:#a9998a;
-    --line: rgba(201,161,90,0.35);
-    --font-display:'Aref Ruqaa', serif;
-    --font-body:'Cairo', sans-serif;
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Tahoma', Arial, sans-serif;
+    background: #111;
+    color: #fff;
+    text-align: center;
   }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:
-      radial-gradient(ellipse at 50% -10%, #2b2317 0%, transparent 55%),
-      var(--bg);
-    color:var(--ivory);
-    font-family:var(--font-body);
-    line-height:1.7;
-    -webkit-font-smoothing:antialiased;
+  header {
+    padding: 30px 15px;
   }
-  a{color:inherit;text-decoration:none;}
-  img{max-width:100%;display:block;}
-
-  .container{max-width:1080px;margin:0 auto;padding:0 24px;}
-
-  /* ---------- viewfinder corner motif ---------- */
-  .viewfinder{position:relative;}
-  .viewfinder .corner{position:absolute;width:22px;height:22px;border-color:var(--gold);opacity:.85;}
-  .viewfinder .tl{top:-1px;right:-1px;border-top:2px solid;border-right:2px solid;}
-  .viewfinder .tr{top:-1px;left:-1px;border-top:2px solid;border-left:2px solid;}
-  .viewfinder .bl{bottom:-1px;right:-1px;border-bottom:2px solid;border-right:2px solid;}
-  .viewfinder .br{bottom:-1px;left:-1px;border-bottom:2px solid;border-left:2px solid;}
-
-  /* ---------- header ---------- */
-  header{
-    padding:52px 0 30px;
-    text-align:center;
-    border-bottom:1px solid var(--line);
+  header img {
+    max-width: 220px;
+    border-radius: 12px;
   }
-  .logo-wrap{
-    width:150px;height:150px;
-    margin:0 auto 18px;
-    border-radius:50%;
-    overflow:hidden;
-    border:1px solid var(--line);
-    background:var(--surface);
+  .btn {
+    display: inline-block;
+    background: red;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
   }
-  .logo-wrap img{width:100%;height:100%;object-fit:cover;}
-
-  .fb-link{
-    display:inline-flex;align-items:center;gap:8px;
-    font-size:14px;color:var(--gold-bright);
-    padding:7px 16px;border:1px solid var(--line);border-radius:30px;
-    margin-bottom:22px;
-    transition:.25s;
+  .social a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
   }
-  .fb-link:hover{background:var(--gold);color:#181310;border-color:var(--gold);}
-  .fb-link svg{width:16px;height:16px;fill:currentColor;}
-
-  h1.brand{
-    font-family:var(--font-display);
-    font-size:clamp(34px,6vw,54px);
-    color:var(--gold-bright);
-    margin:0 0 6px;
-    letter-spacing:.5px;
+  h1 {
+    font-size: 28px;
+    margin: 20px 0 10px;
   }
-  .tagline{color:var(--muted);font-size:16px;font-weight:300;}
-
-  /* ---------- section headings ---------- */
-  .section{padding:66px 0;}
-  .section + .section{border-top:1px solid var(--line);}
-  .section-head{text-align:center;margin-bottom:44px;}
-  .eyebrow{
-    font-size:13px;letter-spacing:2px;color:var(--gold);
-    text-transform:uppercase;font-weight:600;
+  .tagline {
+    color: #ccc;
+    margin-bottom: 30px;
   }
-  .section-title{
-    font-family:var(--font-display);
-    font-size:clamp(26px,4vw,36px);
-    color:var(--ivory);
-    margin:8px 0 0;
+  section {
+    padding: 30px 15px;
   }
-
-  /* ---------- packages ---------- */
-  .packages{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
-    gap:26px;
+  .packages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
   }
-  .package{
-    position:relative;
-    background:var(--surface);
-    padding:34px 26px 30px;
-    border:1px solid var(--line);
+  .package {
+    background: #1c1c1c;
+    border: 2px solid red;
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
   }
-  .package.featured{
-    background:var(--surface-raised);
-    transform:translateY(-8px);
+  .package.featured {
+    border: 2px solid gold;
   }
-  .badge{
-    position:absolute;top:-13px;right:50%;transform:translateX(50%);
-    background:var(--gold);color:#1b1611;
-    font-size:12px;font-weight:700;
-    padding:5px 14px;border-radius:20px;white-space:nowrap;
+  .package h3 {
+    color: red;
+    margin-bottom: 10px;
   }
-  .package-name{font-family:var(--font-display);font-size:22px;color:var(--gold-bright);margin:0 0 4px;}
-  .package-price{font-size:34px;font-weight:800;color:var(--ivory);margin:6px 0 20px;}
-  .package-price span{font-size:15px;color:var(--muted);font-weight:400;}
-  .package ul{list-style:none;padding:0;margin:0 0 26px;}
-  .package li{
-    padding:10px 0;
-    border-top:1px dashed var(--line);
-    font-size:15px;color:var(--ivory);
+  .price {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
   }
-  .package li:first-child{border-top:none;}
-
-  .btn-wa{
-    display:flex;align-items:center;justify-content:center;gap:10px;
-    background:#25d366;color:#0e1a12;
-    font-weight:700;font-size:15px;
-    padding:13px 18px;border-radius:8px;
-    transition:.25s;
+  .package ul {
+    list-style: none;
+    text-align: right;
+    margin-bottom: 15px;
   }
-  .btn-wa:hover{filter:brightness(1.08);transform:translateY(-1px);}
-  .btn-wa svg{width:19px;height:19px;fill:currentColor;}
-
-  /* ---------- extras / promo ---------- */
-  .extras-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:18px;
+  .package ul li {
+    margin-bottom: 8px;
+    color: #ddd;
   }
-  .extra-item{
-    background:var(--surface);
-    border:1px solid var(--line);
-    padding:20px 22px;
-    display:flex;align-items:center;justify-content:space-between;gap:14px;
+  .extra-list {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: right;
   }
-  .extra-name{font-size:15px;color:var(--ivory);}
-  .extra-price{
-    font-weight:800;color:var(--gold-bright);white-space:nowrap;font-size:16px;
+  .extra-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1c1c1c;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
   }
-  .extra-item .btn-wa{padding:8px 14px;font-size:13px;flex-shrink:0;}
-
-  .promo-note{
-    text-align:center;color:var(--muted);font-size:14px;margin-top:-24px;margin-bottom:36px;
+  footer {
+    padding: 30px 15px;
+    border-top: 1px solid #333;
+    color: #999;
+    font-size: 14px;
   }
-
-  /* ---------- footer ---------- */
-  footer{
-    padding:50px 0 40px;text-align:center;
-    border-top:1px solid var(--line);
-  }
-  footer .brand-mini{font-family:var(--font-display);font-size:22px;color:var(--gold-bright);margin-bottom:14px;}
-  .footer-links{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-bottom:18px;}
-  .footer-links a{
-    display:inline-flex;align-items:center;gap:8px;
-    font-size:14px;color:var(--ivory);
-    padding:8px 16px;border:1px solid var(--line);border-radius:30px;
-  }
-  .footer-links a:hover{border-color:var(--gold);color:var(--gold-bright);}
-  .footer-links svg{width:15px;height:15px;fill:currentColor;}
-  .copyright{color:var(--muted);font-size:13px;}
-
-  /* ---------- floating whatsapp ---------- */
-  .fab-wa{
-    position:fixed;bottom:22px;left:22px;z-index:50;
-    width:58px;height:58px;border-radius:50%;
-    background:#25d366;display:flex;align-items:center;justify-content:center;
-    box-shadow:0 6px 18px rgba(0,0,0,.4);
-  }
-  .fab-wa svg{width:28px;height:28px;fill:#0e1a12;}
-
-  .fab-music{
-    position:fixed;bottom:22px;right:22px;z-index:50;
-    width:52px;height:52px;border-radius:50%;
-    background:var(--surface-raised);border:1px solid var(--line);
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 6px 18px rgba(0,0,0,.4);
-    cursor:pointer;
-  }
-  .fab-music svg{width:22px;height:22px;fill:var(--gold-bright);}
-  .fab-music.playing{animation:pulseRing 2s ease-out infinite;}
-  @keyframes pulseRing{
-    0%{box-shadow:0 6px 18px rgba(0,0,0,.4), 0 0 0 0 rgba(201,161,90,.5);}
-    70%{box-shadow:0 6px 18px rgba(0,0,0,.4), 0 0 0 14px rgba(201,161,90,0);}
-    100%{box-shadow:0 6px 18px rgba(0,0,0,.4), 0 0 0 0 rgba(201,161,90,0);}
-  }
-
-  @media (max-width:600px){
-    .package.featured{transform:none;}
-  }
-
-  /* ---------- entrance / scroll animations ---------- */
-  @keyframes fadeUp{
-    from{opacity:0;transform:translateY(28px);}
-    to{opacity:1;transform:translateY(0);}
-  }
-  @keyframes scaleIn{
-    from{opacity:0;transform:scale(.85);}
-    to{opacity:1;transform:scale(1);}
-  }
-  @keyframes shimmer{
-    0%{background-position:-200% 0;}
-    100%{background-position:200% 0;}
-  }
-
-  .logo-wrap{animation:scaleIn .9s cubic-bezier(.2,.8,.2,1) both;}
-  .fb-link{animation:fadeUp .8s ease-out .25s both;}
-  h1.brand{animation:fadeUp .9s ease-out .4s both;}
-  .tagline{animation:fadeUp .9s ease-out .55s both;}
-
-  h1.brand{
-    background:linear-gradient(90deg, var(--gold-bright) 0%, var(--ivory) 25%, var(--gold-bright) 50%, var(--ivory) 75%, var(--gold-bright) 100%);
-    background-size:200% auto;
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-    animation:fadeUp .9s ease-out .4s both, shimmer 6s linear 1.4s infinite;
-  }
-
-  .reveal{
-    opacity:0;transform:translateY(32px);
-    transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);
-  }
-  .reveal.in-view{opacity:1;transform:translateY(0);}
-
-  .packages .package.reveal,
-  .extras-grid .extra-item.reveal{transition-delay:var(--stagger,0ms);}
-
-  .fab-wa, .fab-music{
-    opacity:0;transform:scale(.6);
-    animation:scaleIn .6s cubic-bezier(.2,.8,.2,1) 1.4s both;
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    *{animation:none !important;transition:none !important;}
-    .reveal{opacity:1;transform:none;}
-  }
-
-  body.locked{overflow:hidden;}
-
-  .entry-gate{
-    position:fixed;inset:0;z-index:200;
-    background:radial-gradient(ellipse at 50% 30%, #241d16 0%, #100e0c 70%);
-    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;
-    transition:opacity 1s ease, visibility 1s ease;
-  }
-  .entry-gate.hidden{opacity:0;visibility:hidden;pointer-events:none;}
-  .entry-gate img{width:100px;height:100px;border-radius:50%;border:1px solid var(--line);animation:scaleIn .9s cubic-bezier(.2,.8,.2,1) both;}
-  .entry-gate h2{
-    font-family:var(--font-display);color:var(--gold-bright);font-size:26px;margin:0;
-    animation:fadeUp .8s ease-out .2s both;
-  }
-  .enter-btn{
-    display:flex;align-items:center;gap:10px;
-    background:transparent;border:1px solid var(--gold);color:var(--gold-bright);
-    font-family:var(--font-body);font-size:15px;font-weight:600;
-    padding:13px 30px;border-radius:30px;cursor:pointer;
-    animation:fadeUp .8s ease-out .4s both;
-    transition:.3s;
-  }
-  .enter-btn:hover{background:var(--gold);color:#181310;}
-  .enter-btn svg{width:16px;height:16px;fill:currentColor;}
 </style>
 </head>
-<body class="locked">
+<body>
 
-<!-- ===== ENTRY GATE (tap to enter + start music) ===== -->
-<div class="entry-gate" id="entry-gate">
-  <img src="https://design.canva.ai/LjqC-3thPX9Slmi" alt="Zyad Eliwa Photographer">
-  <h2>Zyad Eliwa Photographer</h2>
-  <button class="enter-btn" id="enter-btn">
-    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-    ادخل الموقع
-  </button>
-</div>
-
-
-<!-- ===== HEADER ===== -->
 <header>
-  <div class="container">
-    <div class="logo-wrap viewfinder">
-      <img src="https://design.canva.ai/LjqC-3thPX9Slmi" alt="Zyad Eliwa Photographer Logo">
-    </div>
-    <a class="fb-link" href="https://www.facebook.com/share/1BXLEUUS62/" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg>
-      تابعنا على فيسبوك
-    </a>
-    <h1 class="brand">Zyad Eliwa Photographer</h1>
-    <p class="tagline">نحفظ لحظاتك الحقيقية بعين محترفة وإحساس فني</p>
+  <!-- اللوجو الجديد -->
+  <img src="logo.jpg" alt="Zyad Eliwa Photographer Logo">
+  <br>
+  <a href="#packages" class="btn">ادخل الموقع</a>
+  <div class="social">
+    <a href="https://www.facebook.com/share/1BXLEUUS62/" target="_blank">تابعنا على فيسبوك</a>
   </div>
 </header>
 
-<!-- ===== PACKAGES ===== -->
-<section class="section" id="packages">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">الباقات</div>
-      <h2 class="section-title">اختار الباقة اللي تناسبك</h2>
+<h1>Zyad Eliwa Photographer</h1>
+<p class="tagline">نحفظ لحظاتك الحقيقية بعين محترفة وإحساس فني</p>
+
+<section id="packages">
+  <h2>اختار الباقة اللي تناسبك</h2>
+  <div class="packages">
+
+    <div class="package">
+      <h3>الباقة الأولى</h3>
+      <div class="price">2200 جنيه</div>
+      <ul>
+        <li>تصوير السيشن مفتوح</li>
+        <li>تصوير القاعة (البارتي) ساعة واحدة فقط</li>
+        <li>تسليم طابلوه 30×40</li>
+      </ul>
+      <a href="#" class="btn">احجز على الواتس اب</a>
     </div>
 
-    <div class="packages">
-
-      <!-- Package 1 -->
-      <div class="package viewfinder reveal" style="--stagger:0ms">
-        <span class="corner tl"></span><span class="corner tr"></span>
-        <span class="corner bl"></span><span class="corner br"></span>
-        <h3 class="package-name">الباقة الأولى</h3>
-        <div class="package-price">2200 <span>جنيه</span></div>
-        <ul>
-          <li>تصوير السيشن مفتوح</li>
-          <li>تصوير القاعة (البارتي) ساعة واحدة فقط</li>
-          <li>تسليم طابلوه 30×40</li>
-        </ul>
-        <a class="btn-wa" data-msg="مرحبًا، أنا مهتم بحجز الباقة الأولى (2200 جنيه) 📸" href="#">
-          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.4-.7-2.3-1.3-3.2-2.9-.2-.4.2-.4.6-1.2.1-.2 0-.4 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.5-.3Z"/></svg>
-          احجز على الواتس اب
-        </a>
-      </div>
-
-      <!-- Package 2 -->
-      <div class="package featured viewfinder reveal" style="--stagger:140ms">
-        <span class="badge">الأكثر طلبًا</span>
-        <span class="corner tl"></span><span class="corner tr"></span>
-        <span class="corner bl"></span><span class="corner br"></span>
-        <h3 class="package-name">الباقة الثانية</h3>
-        <div class="package-price">3600 <span>جنيه</span></div>
-        <ul>
-          <li>السيشن المفتوح + تصوير القاعة أو البارتي وقت مفتوح</li>
-          <li>تسليم ألبوم 30×40</li>
-          <li>طابلوه 50×60</li>
-          <li>تسليم 20 كارت صغير</li>
-        </ul>
-        <a class="btn-wa" data-msg="مرحبًا، أنا مهتم بحجز الباقة الثانية (3600 جنيه) 📸" href="#">
-          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.4-.7-2.3-1.3-3.2-2.9-.2-.4.2-.4.6-1.2.1-.2 0-.4 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.5-.3Z"/></svg>
-          احجز على الواتس اب
-        </a>
-      </div>
-
-      <!-- Package 3 -->
-      <div class="package viewfinder reveal" style="--stagger:280ms">
-        <span class="corner tl"></span><span class="corner tr"></span>
-        <span class="corner bl"></span><span class="corner br"></span>
-        <h3 class="package-name">الباقة الثالثة</h3>
-        <div class="package-price">4500 <span>جنيه</span></div>
-        <ul>
-          <li>تصوير سيشن مفتوح + تصوير القاعة أو البارتي</li>
-          <li>تسليم ألبوم 30×60</li>
-          <li>طابلوه 50×70</li>
-          <li>ساعة 30×40</li>
-          <li>تسليم كروت صغيرة للسيشن كله</li>
-        </ul>
-        <a class="btn-wa" data-msg="مرحبًا، أنا مهتم بحجز الباقة الثالثة (4500 جنيه) 📸" href="#">
-          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.4-.7-2.3-1.3-3.2-2.9-.2-.4.2-.4.6-1.2.1-.2 0-.4 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.5-.3Z"/></svg>
-          احجز على الواتس اب
-        </a>
-      </div>
-
+    <div class="package featured">
+      <h3>الباقة الثانية ⭐ الأكثر طلبًا</h3>
+      <div class="price">3600 جنيه</div>
+      <ul>
+        <li>السيشن المفتوح + تصوير القاعة أو البارتي وقت مفتوح</li>
+        <li>تسليم ألبوم 30×40</li>
+        <li>طابلوه 50×60</li>
+        <li>تسليم 20 كارت صغير</li>
+      </ul>
+      <a href="#" class="btn">احجز على الواتس اب</a>
     </div>
+
+    <div class="package">
+      <h3>الباقة الثالثة</h3>
+      <div class="price">4500 جنيه</div>
+      <ul>
+        <li>تصوير سيشن مفتوح + تصوير القاعة أو البارتي</li>
+        <li>تسليم ألبوم 30×60</li>
+        <li>طابلوه 50×70</li>
+        <li>ساعة 30×40</li>
+        <li>تسليم كروت صغيرة للسيشن كله</li>
+      </ul>
+      <a href="#" class="btn">احجز على الواتس اب</a>
+    </div>
+
   </div>
 </section>
 
-<!-- ===== EXTRAS ===== -->
-<section class="section" id="extras">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">إضافات</div>
-      <h2 class="section-title">اطلب اللي محتاجه بره الباقات</h2>
-    </div>
-    <div class="extras-grid">
-
-      <div class="extra-item reveal" style="--stagger:0ms">
-        <span class="extra-name">مصور إضافي</span>
-        <span class="extra-price">600 ج</span>
-        <a class="btn-wa" data-msg="مرحبًا، عايز أضيف مصور إضافي (600 جنيه)" href="#">اطلب</a>
-      </div>
-
-      <div class="extra-item reveal" style="--stagger:80ms">
-        <span class="extra-name">تصوير القاعة فقط</span>
-        <span class="extra-price">800 ج</span>
-        <a class="btn-wa" data-msg="مرحبًا، عايز أحجز تصوير القاعة فقط (800 جنيه)" href="#">اطلب</a>
-      </div>
-
-      <div class="extra-item reveal" style="--stagger:160ms">
-        <span class="extra-name">تصوير السيشن فقط</span>
-        <span class="extra-price">1500 ج</span>
-        <a class="btn-wa" data-msg="مرحبًا، عايز أحجز تصوير السيشن فقط (1500 جنيه)" href="#">اطلب</a>
-      </div>
-
-      <div class="extra-item reveal" style="--stagger:240ms">
-        <span class="extra-name">تصوير سيشن كتب كتاب أو خطوبة</span>
-        <span class="extra-price">1500 ج</span>
-        <a class="btn-wa" data-msg="مرحبًا، عايز أحجز تصوير كتب كتاب/خطوبة (1500 جنيه)" href="#">اطلب</a>
-      </div>
-
-    </div>
+<section>
+  <h2>اطلب اللي محتاجه بره الباقات</h2>
+  <div class="extra-list">
+    <div class="extra-item"><span>مصور إضافي</span><span>600 ج <a href="#" class="btn">اطلب</a></span></div>
+    <div class="extra-item"><span>تصوير القاعة فقط</span><span>800 ج <a href="#" class="btn">اطلب</a></span></div>
+    <div class="extra-item"><span>تصوير السيشن فقط</span><span>1500 ج <a href="#" class="btn">اطلب</a></span></div>
+    <div class="extra-item"><span>تصوير سيشن كتب كتاب أو خطوبة</span><span>1500 ج <a href="#" class="btn">اطلب</a></span></div>
   </div>
 </section>
 
-<!-- ===== PROMO VIDEO ===== -->
-<section class="section" id="promo">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">برومو فيديو</div>
-      <h2 class="section-title">وثّق يومك بفيديو برومو مميز</h2>
-    </div>
-    <div class="extras-grid">
-
-      <div class="extra-item reveal" style="--stagger:0ms">
-        <span class="extra-name">برومو للسيشن</span>
-        <span class="extra-price">2000 ج</span>
-        <a class="btn-wa" data-msg="مرحبًا، عايز أحجز برومو فيديو للسيشن (2000 جنيه)" href="#">اطلب</a>
-      </div>
-
-      <div class="extra-item reveal" style="--stagger:80ms">
-        <span class="extra-name">برومو للسيشن والقاعة</span>
-        <span class="extra-price">2500 ج</span>
-        <a class="btn-wa" data-msg="مرحبًا، عايز أحجز برومو فيديو للسيشن والقاعة (2500 جنيه)" href="#">اطلب</a>
-      </div>
-
-      <div class="extra-item reveal" style="--stagger:160ms">
-        <span class="extra-name">برومو للقاعة فقط</span>
-        <span class="extra-price">800 ج</span>
-        <a class="btn-wa" data-msg="مرحبًا، عايز أحجز برومو فيديو للقاعة فقط (800 جنيه)" href="#">اطلب</a>
-      </div>
-
-    </div>
+<section>
+  <h2>وثّق يومك بفيديو برومو مميز</h2>
+  <div class="extra-list">
+    <div class="extra-item"><span>برومو للسيشن</span><span>2000 ج <a href="#" class="btn">اطلب</a></span></div>
+    <div class="extra-item"><span>برومو للسيشن والقاعة</span><span>2500 ج <a href="#" class="btn">اطلب</a></span></div>
+    <div class="extra-item"><span>برومو للقاعة فقط</span><span>800 ج <a href="#" class="btn">اطلب</a></span></div>
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
 <footer>
-  <div class="container">
-    <div class="brand-mini">Zyad Eliwa Photographer</div>
-    <div class="footer-links">
-      <a href="https://www.facebook.com/share/1BXLEUUS62/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg>
-        فيسبوك
-      </a>
-      <a id="footer-wa" href="#">
-        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.4-.7-2.3-1.3-3.2-2.9-.2-.4.2-.4.6-1.2.1-.2 0-.4 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.5-.3Z"/></svg>
-        01024991382
-      </a>
-    </div>
-    <p class="copyright">© 2026 Zyad Eliwa Photographer — جميع الحقوق محفوظة</p>
-  </div>
+  <p>Zyad Eliwa Photographer</p>
+  <p>
+    <a href="https://www.facebook.com/share/1BXLEUUS62/" style="color:#999;" target="_blank">فيسبوك</a>
+    &nbsp;|&nbsp; 01024991382
+  </p>
+  <p>© 2026 Zyad Eliwa Photographer — جميع الحقوق محفوظة</p>
+  <audio src="calm-music.mp3" loop></audio>
 </footer>
-
-<!-- floating whatsapp -->
-<a class="fab-wa" id="fab-wa" href="#" aria-label="تواصل عبر واتساب">
-  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.4-.7-2.3-1.3-3.2-2.9-.2-.4.2-.4.6-1.2.1-.2 0-.4 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.5-.3Z"/></svg>
-</a>
-
-<button id="music-toggle" class="fab-music" aria-label="تشغيل موسيقى هادئة">
-  <svg id="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-  <svg id="icon-pause" viewBox="0 0 24 24" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
-</button>
-
-<!-- الموسيقى الهادئة -->
-<audio id="bg-audio" loop preload="none">
-  <source src="calm-music.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-  const WHATSAPP_NUMBER = "201024991382";
-  document.querySelectorAll('.btn-wa[data-msg]').forEach(btn=>{
-    const msg = btn.getAttribute('data-msg');
-    btn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
-    btn.target = "_blank";
-    btn.rel = "noopener";
-  });
-  const generalMsg = encodeURIComponent("مرحبًا، عايز أستفسر عن باقات التصوير عندكم 📸");
-  document.getElementById('fab-wa').href = `https://wa.me/${WHATSAPP_NUMBER}?text=${generalMsg}`;
-  document.getElementById('footer-wa').href = `https://wa.me/${WHATSAPP_NUMBER}?text=${generalMsg}`;
-
-  // ---- scroll reveal ----
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add('in-view');
-        io.unobserve(entry.target);
-      }
-    });
-  }, {threshold:.15});
-  revealEls.forEach(el=>io.observe(el));
-
-  // ---- calm background music toggle ----
-  const audio = document.getElementById('bg-audio');
-  const musicBtn = document.getElementById('music-toggle');
-  const iconPlay = document.getElementById('icon-play');
-  const iconPause = document.getElementById('icon-pause');
-  let isPlaying = false;
-
-  // ---- entry gate: tap once to enter + auto-start calm music ----
-  const gate = document.getElementById('entry-gate');
-  const enterBtn = document.getElementById('enter-btn');
-  enterBtn.addEventListener('click', ()=>{
-    document.body.classList.remove('locked');
-    gate.classList.add('hidden');
-    audio.volume = 0.5;
-    audio.play().then(()=>{
-      isPlaying = true;
-      musicBtn.classList.add('playing');
-      iconPlay.style.display='none';
-      iconPause.style.display='block';
-    }).catch(()=>{
-      console.warn('حط رابط الأغنية بتاعتك في وسم <audio> عشان الموسيقى تشتغل تلقائي.');
-    });
-  });
-
-  musicBtn.addEventListener('click', ()=>{
-    if(!isPlaying){
-      audio.volume = 0.5;
-      audio.play().then(()=>{
-        isPlaying = true;
-        musicBtn.classList.add('playing');
-        iconPlay.style.display='none';
-        iconPause.style.display='block';
-      }).catch(()=>{
-        alert('حط رابط الأغنية الخاصة بيك في وسم <audio> الأول عشان الموسيقى تشتغل.');
-      });
-    }else{
-      audio.pause();
-      isPlaying = false;
-      musicBtn.classList.remove('playing');
-      iconPlay.style.display='block';
-      iconPause.style.display='none';
-    }
-  });
-</script>
 
 </body>
 </html>
